@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Experience | Riva Jain</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="terminal">
+        <div class="terminal-header">
+            <div class="title-animation" id="title"></div>
+            <span class="cursor" id="header-cursor">█</span>
+        </div>
+        <div class="terminal-content">
+            
+            <div class="project-dropdown">
+                <p class="project-header"><span class="prompt">>></span> <span class="dropdown-toggle">▶ ARCHIMEDES DESIGN TEAM</span> <span class="location">Blacksburg, VA</span></p>
+                <div class="project-content" style="display: none;">
+                    <p><span class="prompt">&emsp;</span> <strong>Infinitum Subteam Research Programmer, Web Development Team, Advisor</strong> | <em>Sep 2024-Present</em></p>
+                    <p><span class="prompt">&emsp;</span> Developing neural network to predict epileptic seizures from EEG/ECG data and a React Native app for users</p>
+                    <p><span class="prompt">&emsp;</span> Led research review, general body presentations to over 60+, and biweekly faculty meetings; presented at conferences</p>
+                    <p><span class="prompt">&emsp;</span> Designed and led programming for front-end of organization portal as well as back-end logic; elected to act as advisor to incoming team, with responsibilities such as leading meetings, finding sponsors, holding programming workshops, and more</p>
+                    <p><span class="prompt">&emsp;</span> <em>Skills: Neural Networks, EEG/ECG Data Analysis, React Native, Machine Learning, Leadership, Web Development, Conference Presentations</em></p>
+                </div>
+            </div>
+            
+            <div class="project-dropdown">
+                <p class="project-header"><span class="prompt">>></span> <span class="dropdown-toggle">▶ BIOTECHNOLOGY RESEARCH</span></p>
+                <div class="project-content" style="display: none;">
+                    <p><span class="prompt">&emsp;</span> Successfully developed protocol in order to culture different strains of fungi on lignin biopolymer and polyethylene plastic in order to speed up the process of breaking down polyethylene plastic, communicating findings in paper and presentation</p>
+                    <p><span class="prompt">&emsp;</span> Used methods including qPCR, primer design, Fourier Transform Infrared spectroscopy, gravimetric mass measurement</p>
+                    <p><span class="prompt">&emsp;</span> <em>Skills: Biotechnology, Fungal Culture, Biopolymer Research, qPCR, Primer Design, FTIR Spectroscopy, Gravimetric Analysis, Scientific Writing</em></p>
+                </div>
+            </div>
+            
+            <div class="project-dropdown">
+                <p class="project-header"><span class="prompt">>></span> <span class="dropdown-toggle">▶ WASP LAB</span> <span class="upcoming">INCOMING</span></p>
+                <div class="project-content" style="display: none;">
+                    <p><span class="prompt">&emsp;</span> <strong>Research Position</strong> | <em>Late Summer 2025</em></p>
+                    <p><span class="prompt">&emsp;</span> Finetuning LLMs in order to reduce bias in university admissions AI; using RAG and agentic workflows to make output more reliable; working towards publication</p>
+                    <p><span class="prompt">&emsp;</span> <em>Skills: Large Language Models, AI Bias Reduction, RAG (Retrieval-Augmented Generation), Agentic Workflows, Fine-tuning, Academic Research</em></p>
+                </div>
+            </div>
+            
+            <div class="project-dropdown">
+                <p class="project-header"><span class="prompt">>></span> <span class="dropdown-toggle">▶ BROWN/DATABRIDGE LAB</span> <span class="upcoming">INCOMING</span></p>
+                <div class="project-content" style="display: none;">
+                    <p><span class="prompt">&emsp;</span> <strong>Research Position</strong> | <em>Fall 2025</em></p>
+                    <p><span class="prompt">&emsp;</span> AI/ML algorithms for drug discovery</p>
+                    <p><span class="prompt">&emsp;</span> <em>Skills: AI/ML, Drug Discovery, Computational Biology, Algorithm Development</em></p>
+                </div>
+            </div>
+            
+            <p><span class="prompt">>></span> <a href="index.html" class="back-link">cd ..</a></p>
+        </div>
+    </div>
+    <script>
+        // Override the title text for this page
+        document.addEventListener('DOMContentLoaded', function() {
+            const titleText = "users/rivajain/research";
+            document.getElementById('title').textContent = '';
+            let i = 0;
+            
+            function typeTitle() {
+                if (i < titleText.length) {
+                    document.getElementById('title').textContent += titleText.charAt(i);
+                    i++;
+                    setTimeout(typeTitle, 150);
+                }
+            }
+            
+            setTimeout(typeTitle, 500);
+            
+            // Dropdown functionality
+            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const projectContent = this.closest('.project-dropdown').querySelector('.project-content');
+                    const isHidden = projectContent.style.display === 'none';
+                    
+                    if (isHidden) {
+                        projectContent.style.display = 'block';
+                        this.textContent = this.textContent.replace('▶', '▼');
+                    } else {
+                        projectContent.style.display = 'none';
+                        this.textContent = this.textContent.replace('▼', '▶');
+                    }
+                });
+                
+                toggle.style.cursor = 'pointer';
+            });
+        });
+    </script>
+    <style>
+        .project-dropdown {
+            margin-bottom: 15px;
+        }
+        
+        .project-header {
+            margin-bottom: 0;
+        }
+        
+        .dropdown-toggle {
+            cursor: pointer;
+            user-select: none;
+            color: #7fb069; /* Terminal green */
+            font-weight: bold;
+        }
+        
+        .location {
+            color: #888888;
+            font-style: italic;
+            margin-left: 10px;
+        }
+        
+        .upcoming {
+            color: #ffa500; /* Orange for upcoming positions */
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        .dropdown-toggle:hover {
+            opacity: 0.8;
+        }
+        
+        .project-content {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        
+        .project-content em {
+            color: #888888;
+        }
+        
+        .project-content strong {
+            color: #7fb069;
+        }
+    </style>
+</body>
+</html>

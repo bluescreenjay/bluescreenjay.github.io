@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riva Jain</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="terminal">
+        <div class="terminal-header">
+            <div class="title-animation" id="title"></div>
+            <span class="cursor" id="header-cursor">█</span>
+        </div>
+        <div class="terminal-content">
+            <p><span class="prompt">>></span> Hi, I'm <strong><span class="highlight-primary">Riva Jain (she/her)</span></strong> - a current sophomore at Virginia Tech majoring in Computer Science and Psychology. I focus on <span class="highlight-primary">ethical, useful artificial intelligence and machine learning implementation across fields</span> - from embedded systems and comms work to LLM bias reduction. When not in college, I'm based in the <span class="highlight-primary">DMV area</span>. Right now, I'm reading <i>On Earth We're Briefly Gorgeous</i> by Ocean Vuong, as well as <i>Because Internet: Understanding the New Rules of Language</i> by Gretchen McCullough. Recently, I've been trying out <a href="https://arc.net/" class="terminal-link">Arc Browser</a> and <a href="https://willowvoice.com/" class="terminal-link">Willow Voice</a>.</p>
+            <br>
+            <p><span class="prompt">>></span> <strong>YOU MIGHT FIND ME:</strong></p>
+            <p><span class="prompt">&emsp;</span> <a href="internship.html" class="terminal-link">working/at an internship.</a></p>
+            <p><span class="prompt">&emsp;</span> <a href="research.html" class="terminal-link">researching.</a></p>
+            <p><span class="prompt">&emsp;</span> <a href="code.html" class="terminal-link">building with code.</a></p>
+            <p><span class="prompt">&emsp;</span> <a href="design.html" class="terminal-link">designing and creating.</a></p>
+            <p><span class="prompt">&emsp;</span> <a href="hobbies.html" class="terminal-link">just messing around.</a></p>
+            <p><span class="prompt">>></span> <i>If you want a summary of the important stuff, download my <a href="Riva_Jain_Resume_20_25.pdf" target="_blank" class="terminal-link">resume/cv</a> here.</i></p>
+            <br>
+            <p><span class="prompt">>></span> <strong>CONTACT</strong></p>
+            <p><span class="prompt">&emsp;</span> Thoughts, comments, questions, inquiries about projects? Want to meet up for a coffee (even a virtual one)? Reach out <a href="mailto:rivajain@gmail.com" class="terminal-link">here</a> - <span class="highlight-primary">I'd love to hear from you.</span></p>
+        </div>
+    </div>
+    <script> // Override the title text for this page
+        document.addEventListener('DOMContentLoaded', function() {
+            const titleText = "users/rivajain/home";
+            document.getElementById('title').textContent = '';
+            let i = 0;
+            
+            function typeTitle() {
+                if (i < titleText.length) {
+                    document.getElementById('title').textContent += titleText.charAt(i);
+                    i++;
+                    setTimeout(typeTitle, 150);
+                }
+            }
+            
+            setTimeout(typeTitle, 500);
+        });</script>
+</body>
+</html>

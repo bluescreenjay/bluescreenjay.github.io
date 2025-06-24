@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobbies | Riva Jain</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="terminal">
+        <div class="terminal-header">
+            <div class="title-animation" id="title"></div>
+            <span class="cursor" id="header-cursor">█</span>
+        </div>
+        <div class="terminal-content">
+            
+            <div class="project-dropdown">
+                <p class="project-header"><span class="prompt"></span> <span class="dropdown-toggle">▶ @writing</span></p>
+                <div class="project-content" style="display: none;">
+                    <p><span class="prompt"></span> you can find my poetry and prose in various places, including, most recently, <a href="https://www.the-white-board.org/items-1/this-is-a-title-02" class="terminal-link" target="_blank">the white board</a> and virginia tech's <a href="https://www.vtsilhouette.com/submit" class="terminal-link" target="_blank">silhouette</a> literary magazine. i wrote plays performed on several stages across the dmv. was commissioned to write a one-act to be performed in the state theater performance competition circuit.</p>
+                    <p><span class="prompt"></span> <em>skills and concepts: creative work, expression, playwriting, scholastic art and writing, foyle young poets</em></p>
+                </div>
+            </div>
+            
+            <div class="project-dropdown">
+                <p class="project-header"><span class="prompt"></span> <span class="dropdown-toggle">▶ @photography</span></p>
+                <div class="project-content" style="display: none;">
+                    <p><span class="prompt"></span> i take pictures and edit them.</p>
+                    <p><span class="prompt"></span> <em>skills and concepts: nikon d3100, nikon d5500, image editing, image retouching, adobe photoshop, adobe lightroom, adobe indesign, darktable, image composition</em></p>
+                </div>
+            </div>
+            
+            <div class="project-dropdown">
+                <p class="project-header"><span class="prompt"></span> <span class="dropdown-toggle">▶ @amateur filmmaking and color grading</span></p>
+                <div class="project-content" style="display: none;">
+                    <p><span class="prompt"></span> learning. having fun experimenting.</p>
+                    <p><span class="prompt"></span> <em>skills and concepts: creative work, davinci resolve, blackmagic design pocket cinema camera 4K</em></p>
+                </div>
+            </div>
+            
+            <div class="project-dropdown">
+                <p class="project-header"><span class="prompt"></span> <span class="dropdown-toggle">▶ @3d modeling</span></p>
+                <div class="project-content" style="display: none;">
+                    <p><span class="prompt"></span> <em>skills and concepts: womp3d, solidworks, onshape, tinkercad, autoCAD</em></p>
+                </div>
+            </div>
+            
+            <div class="project-dropdown">
+                <p class="project-header"><span class="prompt"></span> <span class="dropdown-toggle">▶ @zine and magazine making</span></p>
+                <div class="project-content" style="display: none;">
+                    <p><span class="prompt"></span> <em>skills and concepts: creative expression, layout, design, scribus, adobe indesign</em></p>
+                </div>
+            </div>
+            
+            <div class="project-dropdown">
+                <p class="project-header"><span class="prompt"></span> <span class="dropdown-toggle">▶ @organizing digitally and trying out fun software</span></p>
+                <div class="project-content" style="display: none;">
+                    <p><span class="prompt"></span> at this point, it might as well be a hobby.</p>
+                    <p><span class="prompt"></span> <em>skills and concepts: alphafold, pymol, notion, obsidian, willow, arc, sublime, todoist, google calendar, excel, obsidian, cosmos, remnote, tana, logseq, zen browser…</em></p>
+                </div>
+            </div>
+            
+            <p><span class="prompt">>></span> <a href="index.html" class="back-link">cd ..</a></p>
+        </div>
+    </div>
+    <script>
+        // Override the title text for this page
+        document.addEventListener('DOMContentLoaded', function() {
+            const titleText = "~/hobbies";
+            document.getElementById('title').textContent = '';
+            let i = 0;
+            
+            function typeTitle() {
+                if (i < titleText.length) {
+                    document.getElementById('title').textContent += titleText.charAt(i);
+                    i++;
+                    setTimeout(typeTitle, 150);
+                }
+            }
+            
+            setTimeout(typeTitle, 500);
+            
+            // Dropdown functionality
+            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const projectContent = this.closest('.project-dropdown').querySelector('.project-content');
+                    const isHidden = projectContent.style.display === 'none';
+                    
+                    if (isHidden) {
+                        projectContent.style.display = 'block';
+                        this.textContent = this.textContent.replace('▶', '▼');
+                    } else {
+                        projectContent.style.display = 'none';
+                        this.textContent = this.textContent.replace('▼', '▶');
+                    }
+                });
+                
+                toggle.style.cursor = 'pointer';
+            });
+        });
+    </script>
+    <style>
+        .project-dropdown {
+            margin-bottom: 10px;
+        }
+        
+        .project-header {
+            margin-bottom: 0;
+        }
+        
+        .dropdown-toggle {
+            cursor: pointer;
+            user-select: none;
+            color: #7fb069; /* Terminal green */
+        }
+        
+        .dropdown-toggle:hover {
+            opacity: 0.8;
+        }
+        
+        .project-content {
+            margin-left: 20px;
+        }
+        
+        .project-content em {
+            color: #888888;
+        }
+    </style>
+</body>
+</html>

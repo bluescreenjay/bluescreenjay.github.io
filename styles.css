@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=MonoLisa:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #171717;
+    font-family: 'MonoLisa', 'DejaVu Sans Mono', 'Consolas', monospace;
+    font-size: 15px;
+    /* color: #00ff00; */
+    color: #fff; /* Changed to white text instead of green */
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: url('image-removebg-preview (5).png'), auto;
+}
+
+.terminal {
+    width: 100%;
+    max-width: 800px;
+    background-color: #12121200;
+    /*border: 2px solid #00ff00;*/
+    padding: 20px;
+    /*box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);*/
+    border-radius: 10px;
+}
+
+.terminal-header {
+    border-bottom: 1px solid #ffffff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.title-animation {
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.cursor {
+    color: #ffffff;
+    font-size: 20px;
+    animation: blink 1s step-end infinite;
+    margin-left: 3px;
+}
+
+.terminal-content {
+    line-height: 1.6;
+}
+
+.terminal-content p {
+    margin-bottom: 10px;
+    word-wrap: break-word;
+}
+
+.prompt {
+    color: #ffffff;
+    margin-right: 8px;
+    font-weight: bold;
+    
+}
+
+.highlight-primary {
+    color: #7fb069; /* Changed from bright #00ff41 to muted green */
+}
+
+.highlight-link {
+    color: #6ba3d6; /* Changed from bright #00bfff to muted blue */
+}
+
+.terminal-link {
+    color: #6ba3d6; /* Changed from bright #00bfff to muted blue */
+    text-decoration: none;
+    border-bottom: 1px solid #555;
+    padding-bottom: 1px;
+    transition: border-color 0.3s ease;
+}
+
+.terminal-link:hover {
+    border-color: #fff;
+}
+
+.terminal-link:active {
+    color: #ccc;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #aaa;
+    text-decoration: none;
+    border-bottom: 1px solid #555;
+}
+
+.back-link:hover {
+    color: #fff;
+    border-color: #fff;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}

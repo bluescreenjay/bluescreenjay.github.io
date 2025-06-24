@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Experience | Riva Jain</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="terminal">
+        <div class="terminal-header">
+            <div class="title-animation" id="title"></div>
+            <span class="cursor" id="header-cursor">█</span>
+        </div>
+        <div class="terminal-content">
+            
+            <div class="project-dropdown">
+                <p class="project-header"><span class="prompt">>></span> <span class="dropdown-toggle">▶ INPHASE RESEARCH</span> <span class="location">Fairfax, VA</span></p>
+                <div class="project-content" style="display: none;">
+                    <p><span class="prompt">&emsp;</span> <strong>Software Engineering/Machine Learning Intern</strong> | <em>May-Aug 2025</em></p>
+                    <p><span class="prompt">&emsp;</span> Created machine learning application in order to detect anomalies in complex radio spectral data in real time; programmed and documented steps for data cleaning, preprocessing/blurring/transforming, feature engineering and extraction, zero-shot forecasting, and unsupervised anomaly detection through clustering; investigated and successfully implemented image anomaly detection on generated spectral images; application scheduled to be deployed for in-house use</p>
+                    <p><span class="prompt">&emsp;</span> <em>Skills: Machine Learning, Anomaly Detection, Data Preprocessing, Feature Engineering, Real-time Processing, Python, Clustering, Computer Vision</em></p>
+                </div>
+            </div>
+            
+            <div class="project-dropdown">
+                <p class="project-header"><span class="prompt">>></span> <span class="dropdown-toggle">▶ JOHNS HOPKINS UNIVERSITY APPLIED PHYSICS LABORATORY (APL)</span> <span class="location">Laurel, MD</span></p>
+                <div class="project-content" style="display: none;">
+                    <p><span class="prompt">&emsp;</span> <strong>Data Science/Computing Intern</strong> | <em>Jun-Aug 2022, Jun-Aug 2023</em></p>
+                    <p><span class="prompt">&emsp;</span> Modeled opioid overdose trends using spatio-temporal clustering, regression, and random forests; findings presented to state government; selected for lab-wide research conference; used generative AI to scrape data from medical datasets</p>
+                    <p><span class="prompt">&emsp;</span> Built ML models linking bat activity to Ebola and Nipah Virus to predict outbreaks; delivered proof of concept to client</p>
+                    <p><span class="prompt">&emsp;</span> <em>Skills: Data Science, Machine Learning, Spatio-temporal Analysis, Random Forest, Regression, Data Scraping, Generative AI, Public Health Analytics</em></p>
+                </div>
+            </div>
+            
+            <div class="project-dropdown">
+                <p class="project-header"><span class="prompt">>></span> <span class="dropdown-toggle">▶ MOONLIT WINGS THEATER EDUCATION PROGRAM</span> <span class="location">Fairfax, VA</span></p>
+                <div class="project-content" style="display: none;">
+                    <p><span class="prompt">&emsp;</span> <strong>Camp Director, Camp Production Manager</strong> | <em>Jun-Aug 2024</em></p>
+                    <p><span class="prompt">&emsp;</span> Led over forty children from ages seven to fourteen through one- and two-week productions, instructing students on acting, vocal, and dance techniques, planning and executing lessons and activities, and handling disciplinary and interpersonal issues</p>
+                    <p><span class="prompt">&emsp;</span> Managed technical lights and sound systems during performances</p>
+                    <p><span class="prompt">&emsp;</span> Received positive feedback from several parents stating that the content, organization, and day-to-day running of the camp was the best they had seen</p>
+                    <p><span class="prompt">&emsp;</span> <em>Skills: Leadership, Education, Program Management, Technical Theater, Sound/Lighting Systems, Child Development</em></p>
+                </div>
+            </div>
+            
+            <p><span class="prompt">>></span> <a href="index.html" class="back-link">cd ..</a></p>
+        </div>
+    </div>
+    <script>
+        // Override the title text for this page
+        document.addEventListener('DOMContentLoaded', function() {
+            const titleText = "users/rivajain/work";
+            document.getElementById('title').textContent = '';
+            let i = 0;
+            
+            function typeTitle() {
+                if (i < titleText.length) {
+                    document.getElementById('title').textContent += titleText.charAt(i);
+                    i++;
+                    setTimeout(typeTitle, 150);
+                }
+            }
+            
+            setTimeout(typeTitle, 500);
+            
+            // Dropdown functionality
+            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const projectContent = this.closest('.project-dropdown').querySelector('.project-content');
+                    const isHidden = projectContent.style.display === 'none';
+                    
+                    if (isHidden) {
+                        projectContent.style.display = 'block';
+                        this.textContent = this.textContent.replace('▶', '▼');
+                    } else {
+                        projectContent.style.display = 'none';
+                        this.textContent = this.textContent.replace('▼', '▶');
+                    }
+                });
+                
+                toggle.style.cursor = 'pointer';
+            });
+        });
+    </script>
+    <style>
+        .project-dropdown {
+            margin-bottom: 15px;
+        }
+        
+        .project-header {
+            margin-bottom: 0;
+        }
+        
+        .dropdown-toggle {
+            cursor: pointer;
+            user-select: none;
+            color: #7fb069; /* Terminal green */
+            font-weight: bold;
+        }
+        
+        .location {
+            color: #888888;
+            font-style: italic;
+            margin-left: 10px;
+        }
+        
+        .dropdown-toggle:hover {
+            opacity: 0.8;
+        }
+        
+        .project-content {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        
+        .project-content em {
+            color: #888888;
+        }
+        
+        .project-content strong {
+            color: #7fb069;
+        }
+    </style>
+</body>
+</html>
